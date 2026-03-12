@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+:root{--bg:#f7f9fb;--card:#ffffff;--text:#1f2937;--primary:#4f46e5;--muted:#6b7280}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:'Open Sans', system-ui, sans-serif}
+header{background:linear-gradient(135deg,#4f46e5,#06b6d4);color:white;padding:28px 20px;text-align:center}
+header h1{margin:0;font-size:2rem}
+main{padding:28px;max-width:1000px;margin:0 auto}
+.intro{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.05);margin-bottom:20px}
+.intro p{margin:8px 0 12px}
+button{padding:12px 18px;font-size:16px;border:none;border-radius:8px;background:var(--primary);color:white;cursor:pointer}
+.about{background:var(--card);padding:20px;border-radius:12px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.profile-pic-placeholder{font-size:48px;text-align:center;margin:10px 0}
+.features{background:var(--card);padding:20px;border-radius:12px}
+footer{text-align:center;padding:16px;color:var(--muted);font-size:12px}
+#clock{font-variant-numeric:tabular-nums}

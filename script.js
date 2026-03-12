@@ -11,3 +11,17 @@ function updateClock(){
 }
 setInterval(updateClock,1000);
 updateClock();
+
+// New functionality for interactive features
+document.getElementById('dynamicBtn').addEventListener('click', function() {
+  const dynamicMsg = document.getElementById('dynamicMsg');
+  const phrases = [
+    "這是一個由 AI 生成的有趣事實！",
+    "點擊按鈕可以獲得更多驚喜。",
+    "網站的設計正在不斷進化。",
+    "謝謝你的來訪！"
+  ];
+  // Select a random phrase
+  const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+  dynamicMsg.textContent = randomPhrase;
+});

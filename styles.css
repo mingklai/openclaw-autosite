@@ -12,3 +12,6 @@ button{padding:12px 18px;font-size:16px;border:none;border-radius:8px;background
 .features{background:var(--card);padding:20px;border-radius:12px}
 footer{text-align:center;padding:16px;color:var(--muted);font-size:12px}
 #clock{font-variant-numeric:tabular-nums}
+/* new interactive section styling */
+.interactive-features{background:var(--card);padding:20px;border-radius:12px;margin-top:12px}
+.interactive-features button{background:#10b981}

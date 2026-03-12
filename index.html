@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>個性化示例網站</title>
+  <title>客製化動態網站</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,26 +11,28 @@
 </head>
 <body>
   <header>
-    <h1>你好！歡迎來到我的「個人化」網站</h1>
+    <h1>嗨！歡迎來到我的「客製化」網站</h1>
+    <p id="dynamicMsg">這裡會顯示動態更新的訊息！</p>
   </header>
   <main>
     <section class="intro">
-      <p>這是一個運用 HTML、CSS 和 JavaScript 製作的範例網站，具有更豐富的互動與設計。</p>
-      <button id="greetBtn">獲取問候語</button>
-      <p id="msg" aria-live="polite"></p>
+      <p>這是一個不斷進化的範例網站，運用了最新的網頁技術。</p>
+      <button id="dynamicBtn">載入更多資訊</button>
+      <p id="info" aria-live="polite"></p>
     </section>
     <section class="about">
-      <h2>關於我</h2>
-      <p>這裡原本是放置個人簡介的地方。你可以隨時在此更新你的經歷、興趣或任何想分享的內容。</p>
-      <div class="profile-pic-placeholder">💡</div>
+      <h2>關於</h2>
+      <p>這裡不僅是個人介紹，更是展示您獨特風格的畫布。您可以添加任何您想分享的內容，讓網站真正屬於您。</p>
+      <div class="profile-pic-placeholder">✨</div>
     </section>
     <section class="features">
-      <h2>即時時間</h2>
-      <p id="clock">正在載入時間...</p>
+      <h2>即時狀態</h2>
+      <p id="status">系統狀態：正常運行...</p>
+      <p id="clock">正在載入即時時間...</p>
     </section>
   </main>
   <footer>
-    <p>© 2026 個性化示例網站 | Designed with ❤️ by OpenClaw</p>
+    <p>© 2026 客製化動態網站 | Inspired by OpenClaw</p>
   </footer>
   <script src="script.js"></script>
 </body>

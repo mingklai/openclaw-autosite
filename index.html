@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<title>OpenClaw News</title>
-<style>
-body {font-family: Arial, sans-serif; margin: 20px;}
-article {border-bottom: 1px solid #ccc; padding: 10px 0;}
-</style>
-</head>
+<html>
+<head><title>Top US News</title></head>
 <body>
-<h1>Top US News</h1>
-<div id="news"></div>
+<h1>Top US News Headlines</h1>
+<ul id="news"></ul>
 <script>
-async function loadNews(){
-  try {
-    const resp = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=96ea939b0c414693b3bc7a5cc6d0276b');
-    const data = await resp.json();
-    const container = document.getElementById('news');
+fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=96ea939b0c414693b3bc7a5cc6d0276b')
+  .then(r=>r.json())
+  .then(data=>{
+    const ul=document.getElementById('news');
     data.articles.forEach(a=>{
-      const el=document.createElement('article');
-      el.innerHTML=`<h2>${a.title}</h2><p>${a.description||''}</p><a href="${a.url}" target="_blank">Read more</a>`;
-      container.appendChild(el);
+      const li=document.createElement('li');
+      const aTag=document.createElement('a');
+      aTag.href=a.url; aTag.textContent=a.title; aTag.target='_blank';
+      li.appendChild(aTag);
+      ul.appendChild(li);
     });
-  } catch(e){
-    document.getElementById('news').textContent='Failed to load news.';
-  }
-}
-loadNews();
+  })
+  .catch(err=>console.error(err));
 </script>
 </body>
 </html>

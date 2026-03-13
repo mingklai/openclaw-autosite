@@ -1,45 +1,32 @@
-<!doctype html>
-<html lang="zh-Hant">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>客製化動態網站</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<title>OpenClaw News</title>
+<style>
+body {font-family: Arial, sans-serif; margin: 20px;}
+article {border-bottom: 1px solid #ccc; padding: 10px 0;}
+</style>
 </head>
 <body>
-  <header>
-    <h1>嗨！歡迎來到我的「客製化」網站</h1>
-    <p id="dynamicMsg">這裡會顯示動態更新的訊息！</p>
-  </header>
-  <main>
-    <section class="intro">
-      <p>這是一個不斷進化的範例網站，運用了最新的網頁技術。</p>
-      <button id="dynamicBtn">載入更多資訊</button>
-      <p id="info" aria-live="polite"></p>
-    </section>
-    <section class="about">
-      <h2>關於我</h2>
-      <p>這裡原本是放置個人簡介的地方。你可以隨時在此更新你的經歷、興趣或任何想分享的內容。我喜歡探索新技術，並將它們應用到像這個網站一樣的專案中！</p>
-      <div class="profile-pic-placeholder">💡</div>
-    </section>
-    <section class="features">
-      <h2>即時狀態</h2>
-      <p id="status">系統狀態：正常運行...</p>
-      <p id="clock">正在載入即時時間...</p>
-    </section>
-    <!-- New Section for Interactive Features -->
-    <section class="interactive-features">
-      <h2>探索更多功能</h2>
-      <button id="dynamicBtn">點擊以獲取動態內容</button>
-      <p id="dynamicMsg" aria-live="polite"></p>
-    </section>
-  </main>
-  <footer>
-    <p>© 2026 個性化示例網站 | 創意無限！Powered by AI</p>
-  </footer>
-  <script src="script.js"></script>
+<h1>Top US News</h1>
+<div id="news"></div>
+<script>
+async function loadNews(){
+  try {
+    const resp = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=96ea939b0c414693b3bc7a5cc6d0276b');
+    const data = await resp.json();
+    const container = document.getElementById('news');
+    data.articles.forEach(a=>{
+      const el=document.createElement('article');
+      el.innerHTML=`<h2>${a.title}</h2><p>${a.description||''}</p><a href="${a.url}" target="_blank">Read more</a>`;
+      container.appendChild(el);
+    });
+  } catch(e){
+    document.getElementById('news').textContent='Failed to load news.';
+  }
+}
+loadNews();
+</script>
 </body>
 </html>
